@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+if (!ini_get('date.timezone')) {
+    ini_set('date.timezone', 'UTC');
+}
+
+require '/srv/peachy/vendor/autoload.php';
+require 'test/lib/phpunit-rerun/src/RerunCommand.php';
+require 'test/lib/phpunit-rerun/src/RerunTestRunner.php';
+require 'test/lib/phpunit-rerun/src/FailureListener.php';
+require 'test/lib/phpunit-rerun/src/CacheUtil.php';
+
+Rerun_Command::main();
