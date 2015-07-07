@@ -5,10 +5,10 @@ if (!ini_get('date.timezone')) {
     ini_set('date.timezone', 'UTC');
 }
 
-require '/srv/peachy/vendor/autoload.php';
-require 'test/lib/phpunit-rerun/src/RerunCommand.php';
-require 'test/lib/phpunit-rerun/src/RerunTestRunner.php';
-require 'test/lib/phpunit-rerun/src/FailureListener.php';
-require 'test/lib/phpunit-rerun/src/CacheUtil.php';
+require 'vendor/autoload.php';
+require __DIR__ . '/src/RerunCommand.php';
+require __DIR__ . '/src/RerunTestRunner.php';
+require __DIR__ . '/src/FailureListener.php';
+require __DIR__ . '/src/CacheUtil.php';
 
 Rerun_Command::main();
