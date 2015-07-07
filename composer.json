@@ -1,10 +1,28 @@
 {
 	"name": "phpunit_rerun",
+    "description": "Extension of phpunit for rerunning failed tests.",
+    "type": "library",
+    "authors": [
+      {
+          "name": "Karl Klein",
+          "email": "karl.klein@cashongo.co.uk"
+      }
+    ],
 	"require": {
 		"php": ">=5.3.3",
 		"phpunit/phpunit": "~3.7|~4.0"
 	},
 	"bin": [
         "phpunit"
-    ]
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
 }
