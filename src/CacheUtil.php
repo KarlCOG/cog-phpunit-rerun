@@ -47,7 +47,6 @@ class CacheUtil {
             return;
         }
 
-        echo($this->key);
         file_put_contents($this->getFileName(), serialize($this->failedTests));
     }
 
@@ -59,7 +58,6 @@ class CacheUtil {
         // read from the file with the given hash as name
         // return the tests
         $this->key = $key;
-        echo($this->key);
         return unserialize(file_get_contents($this->getFileName()));
     }
 
