@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
-         beStrictAboutOutputDuringTests="true"
+         beStrictAboutOutputDuringTests="false"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutTodoAnnotatedTests="true"
          bootstrap="vendor/autoload.php"

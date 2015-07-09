@@ -7,11 +7,10 @@
  * @author Karl Klein <karl.klein@cashongo.co.uk>
  */
 
-class RerunTest extends PHPUnit_Framework_TestCase {
+class RerunRandomTest extends PHPUnit_Framework_TestCase {
 
     public function random() {
         $this->assertTrue(rand(0, 1) > 0.5, 'you fail');
-
     }
 
 
