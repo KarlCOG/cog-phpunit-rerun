@@ -26,6 +26,8 @@ class Rerun_Command extends PHPUnit_TextUI_Command {
 
     protected function showHelp() {
         parent::showHelp();
-        print '  --rerun                   Runs tests that failed on last execution.';
+        print <<<EOT
+  --rerun                   Runs tests that failed on last execution.
+EOT;
     }
 }
