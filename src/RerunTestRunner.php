@@ -44,15 +44,17 @@ class RerunTestRunner extends PHPUnit_TextUI_TestRunner {
 
             $key = $cache->generateKey($_SERVER['argv']);
 
-            $rerunnableTests = $cache->readCache($key);
+            if ($cache->fileExists($key)) {
+                $rerunnableTests = $cache->readCache($key);
 
-            $suite = new PHPUnit_Framework_TestSuite();
+                $suite = new PHPUnit_Framework_TestSuite();
 
-            foreach ($rerunnableTests as $testName) {
-                $class = new ReflectionClass($testName['testClassName']);
-                $methodName = $testName['testMethodName'];
-                $test = $suite::createTest($class, $methodName);
-                $suite->addTest($test);
+                foreach ($rerunnableTests as $testName) {
+                    $class = new ReflectionClass($testName['testClassName']);
+                    $methodName = $testName['testMethodName'];
+                    $test = $suite::createTest($class, $methodName);
+                    $suite->addTest($test);
+                }
             }
         }
 //      ------------------------------

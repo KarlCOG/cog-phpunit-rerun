@@ -94,4 +94,14 @@ class CacheUtil {
 
         return $this->cachePath . DIRECTORY_SEPARATOR . $this->key . '.txt';
     }
+
+    public function fileExists($key)
+    {
+        $this->key = $key;
+        $file = $this->getFileName();
+        if (file_exists($file)) {
+            return true;
+        }
+        return false;
+    }
 }
