@@ -1,5 +1,5 @@
 {
-	"name": "phpunit_rerun",
+	"name": "phpunit-rerun",
     "description": "Extension of phpunit for rerunning failed tests.",
     "type": "library",
     "authors": [
