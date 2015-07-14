@@ -8,10 +8,10 @@
           "email": "karl.klein@cashongo.co.uk"
       }
     ],
-
-	"bin": [
-        "phpunit"
-    ],
+    "require": {
+      "php": ">=5.3.3",
+      "phpunit/phpunit": "~3.7|~4.0"
+    },
     "autoload": {
         "classmap": [
             "src/"
