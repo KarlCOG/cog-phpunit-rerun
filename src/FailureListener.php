@@ -41,10 +41,14 @@ class PHPUnit_Framework_FailureListener extends PHPUnit_Framework_BaseTestListen
 
     public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
     {
+        $cache = new CacheUtil;
+
 //      if there were failed tests hand off to CacheUtil
         if (! empty($this->failedTests)) {
-            $cache = new CacheUtil;
             $cache->createCache($this->failedTests, $_SERVER['argv']);
+        } else {
+//          delete cache file if all tests passed
+            $cache->deleteCache($_SERVER['argv']);
         }
     }
 

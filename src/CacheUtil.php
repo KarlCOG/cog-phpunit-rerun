@@ -30,6 +30,14 @@ class CacheUtil {
         $this->writeCache();
     }
 
+    public function deleteCache(array $cmdOptions) {
+        $this->key = $this->generateKey($cmdOptions);
+        $cacheFile = $this->getFileName($this->key);
+        if (file_exists($cacheFile)) {
+            unlink($cacheFile);
+        }
+    }
+
     /**
      * Writes failed scenarios cache.
      */
